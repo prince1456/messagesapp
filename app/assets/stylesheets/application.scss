@@ -104,3 +104,23 @@
 p {
   font-size: 16px;
 }
+
+.modal-content{
+	z-index: 9999;
+}
+.modal-header, h4, .close {
+		background-color: #5cb85c;
+		color:white !important;
+		text-align: center;
+		font-size: 30px;
+}
+.modal-footer {
+		background-color: #f9f9f9;
+}
+
+.modal-body2{
+  padding: 15px;
+}
+.modal-body3{
+  padding: 15px;
+}
