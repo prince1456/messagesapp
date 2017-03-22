@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem "faker", github: "stympy/faker"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -50,7 +51,7 @@ group :development, :test do
   gem "interactive_editor"
   gem "hirb"
   gem 'rspec-rails'
-  gem "faker", github: "stympy/faker"
+
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem "nyan-cat-formatter"
