@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="post-title">
     <h1><%= @post.title %></h1>
     <span>
         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -6,13 +7,12 @@
         at
         <%= time_ago(@post.created_at) %>
     </span>
+  </div>
     <div class="img-post img-responsive">
         <center>
-
             <%= image_tag @post.image %>
         </center>
     </div>
-
     <br>
     <br>
     <div>
@@ -20,19 +20,17 @@
             <%= @post.body %>
         </p>
     </div>
-    
     <h2>Comments</h2>
     <% @comments.each do |comment| %>
-    <p><%= comment.body %></p>
-    <b>by
+      <p><%= comment.body %></p>
+      <b>by
         <%= comment.user.name %></b>
-    <hr>
+      <hr>
     <% end %>
-    <%= link_to "Send Comment", "#", data: {target: "#comment", toggle: "modal"}, class: "btn btn-lg btn-default" %>
+    <%= link_to "Send Comment", "#", data: {target: "#comment", toggle: "modal"}, class: "btn btn-lg btn-default post-bottom" %>
 </div>
 <div id="comment" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -43,13 +41,12 @@
                 <%=simple_form_for [@post, @comment] do |f|%>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <%= f.input :body %>
-                <%= f.submit "Comment", class:"btn btn-primary" %>
+                <%= f.submit "Comment", class:"btn btn-default" %>
                 <% end %>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-
     </div>
 </div>
