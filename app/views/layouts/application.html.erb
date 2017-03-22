@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Message</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Message</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
+    <body>
 
-    <%= render "layouts/navbar" %>
-    <div class="text-center">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
+        <%= render "layouts/navbar" %>
+        <div class="text-center">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+        </div>
 
+        <%= yield %>
+        <footer class="footer">
+            <div class="text-center">
+                Made by
+                <%= link_to "Ali Alizada", "http://ali-alizada.com" %></div>
+        </footer>
 
-    <%= yield %>
-<footer class="footer">
-  <div class="text-center"> Made by <%= link_to "Ali Alizada", "http://ali-alizada.com" %></div>
-</footer>
-  </body>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#loginn").click(function () {
+                    $("div .modal-body2").append("<%= j render(:partial => 'users/sessions/login') %>")
+                })
+                $("#signupp").click(function () {
+                    $("div .modal-body3").append("<%= j render(:partial => 'users/registrations/signup') %>")
+                })
+            })
+        </script>
+
+    </body>
 </html>
