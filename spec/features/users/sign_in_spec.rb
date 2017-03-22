@@ -3,7 +3,6 @@ require 'rails_helper'
 feature 'Sign in', :devise do
   let(:user) {FactoryGirl.create :user}
 
-  # let(:user2) {FactoryGirl.create :user}
   # Scenario is I filled inputs with a user wich is not registered and its should give me faild
   scenario 'user cannot sign in if not registered' do
     visit new_user_session_path
