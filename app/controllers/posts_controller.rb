@@ -22,7 +22,8 @@ class PostsController < ApplicationController
     end
 
     def update
-      if @post.save strong_params
+
+      if @post.update(strong_params)
           redirect_to post_path(@post), notice: "post successfully updated"
       else
         flash[:notice] = "somethings wrong with your informations"
