@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
     def show
       @comment = Comment.new
-      @comments = @post.comments.order(created_at: :desc)
+      @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(3)
     end
 
     private

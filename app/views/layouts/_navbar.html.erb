@@ -12,6 +12,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "New Post", new_post_path %></li>
+            <% if current_user.present? %>
+            <li>  <%= link_to 'New Post2', "#",data: {toggle: "modal", target: "#newpost"}  %></li>
+            <% end %>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -58,6 +61,25 @@
       </div>
 
       <div class="modal-body3">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newpost" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign up</h4>
+      </div>
+
+      <div class="modal-body4">
+        <%= render "posts/form2" %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

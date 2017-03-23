@@ -27,6 +27,9 @@
         <%= comment.user.name %></b>
       <hr>
     <% end %>
+    <div class="digg_pagination text-center">
+        <%= paginate @comments %>
+    </div>
     <%= link_to "Send Comment", "#", data: {target: "#comment", toggle: "modal"}, class: "btn btn-lg btn-default post-bottom" %>
 </div>
 <div id="comment" class="modal fade" role="dialog">
